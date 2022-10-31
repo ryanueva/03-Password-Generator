@@ -15,13 +15,13 @@ var specialChoice;
 function determineLength() {
     passwordLength = prompt("Choose how many characters for your password from 8-128 characters");
 
-    if (passwordLength<8){
+    if (passwordLength<8) {
         alert("Please choose a length between 8-128 characters");
         determineLength();
     }else if (passwordLength>128) {
         alert("Please choose a length between 8-128 characters");
         determineLength();
-    }else if (isNaN(passwordLength)){
+    }else if (isNaN(passwordLength)) {
         alert("Please choose a length between 8-128 characters");
         determineLength();
     }else{
@@ -31,19 +31,19 @@ function determineLength() {
 }
 
 //Function for determining whether or not to include uppercase letters in pasword
-function determineUppercase(){
+function determineUppercase() {
     uppercaseChoice = prompt("Would you like your password to include uppercase letters? \n(Yes or No)");
     uppercaseChoice = uppercaseChoice.toLowerCase();
 
-    if (uppercaseChoice === null || uppercaseChoice === ""){
+    if (uppercaseChoice === null || uppercaseChoice === "") {
         alert("Please choose Yes or No");
         return uppercaseChoice;
     
-    }else if (uppercaseChoice === "yes" || uppercaseChoice === "y"){
+    }else if (uppercaseChoice === "yes" || uppercaseChoice === "y") {
         uppercaseChoice = true;
         return uppercaseChoice;
 
-    }else if (uppercaseChoice === "no" || uppercaseChoice === "n"){
+    }else if (uppercaseChoice === "no" || uppercaseChoice === "n") {
         uppercaseChoice = false;
         return uppercaseChoice;
 
@@ -55,19 +55,19 @@ function determineUppercase(){
 }
 
 //Function for determining whether or not to include numbers in password
-function determineNumber(){
+function determineNumber() {
     numChoice = prompt("Would you like your password to include numbers? \n(Yes or No)");
       numChoice = numChoice.toLowerCase();
   
-      if (numChoice === null || numChoice === ""){
+      if (numChoice === null || numChoice === "") {
         alert("Please choose Yes or No");
         determineNumber();
   
-      }else if (numChoice === "yes" || numChoice ==="y"){
+      }else if (numChoice === "yes" || numChoice ==="y") {
         numChoice = true;
         return numChoice;
   
-      }else if (numChoice === "no" || numChoice ==="n"){
+      }else if (numChoice === "no" || numChoice ==="n") {
         numChoice = false;
         return numChoice;
       
@@ -79,19 +79,19 @@ function determineNumber(){
   }
 
 //Function for determining whether or not to include special characters in password
-function determineSpecial(){
+function determineSpecial() {
     specialChoice = prompt("Would you like your password to include special characters? \n(Yes or No)");
       specialChoice = specialChoice.toLowerCase();
   
-      if (specialChoice === null || specialChoice === ""){
+      if (specialChoice === null || specialChoice === "") {
         alert("Please choose Yes or No");
         determineSpecial();
   
-      }else if (specialChoice === "yes" || specialChoice ==="y"){
+      }else if (specialChoice === "yes" || specialChoice ==="y") {
         specialChoice = true;
         return specialChoice;
   
-      }else if (specialChoice === "no" || specialChoice ==="n"){
+      }else if (specialChoice === "no" || specialChoice ==="n") {
         specialChoice = false;
         return specialChoice;
       
@@ -103,7 +103,7 @@ function determineSpecial(){
   }
 
 //Function for generating a random password based on information provided from previous functions
-function generatePassword(){
+function generatePassword() {
     determineLength();
     console.log(passwordLength);
     determineUppercase();
@@ -115,32 +115,32 @@ function generatePassword(){
 
     var characters = lowercaseChar;
     var password;
-    if (uppercaseChoice && numChoice && specialChoice){
+    if (uppercaseChoice && numChoice && specialChoice) {
         characters += uppercaseChar + numChar + specialChar;
 
-    }else if (uppercaseChoice && numChoice){
+    }else if (uppercaseChoice && numChoice) {
         characters += uppercaseChar + numChar;
 
-    }else if (numChoice && specialChoice){
+    }else if (numChoice && specialChoice) {
         characters += numChar + specialChar;
 
-    }else if (uppercaseChoice && specialChoice){
+    }else if (uppercaseChoice && specialChoice) {
         characters += uppercaseChar + specialChar;
 
-    }else if (uppercaseChoice){
+    }else if (uppercaseChoice) {
         characters += uppercaseChar;
 
-    }else if(numChoice){
+    }else if(numChoice) {
         characters += numChar;
 
-    }else if (specialChoice){
+    }else if (specialChoice) {
         characters += specialChar;
 
     }else{
         characters === lowercaseChar;
     }
 
-    for(var i = 0; i < passwordLength; i++){
+    for(var i = 0; i < passwordLength; i++) {
         password += characters.charAt(Math.floor(Math.random() * characters.length));
     }
     return password;
