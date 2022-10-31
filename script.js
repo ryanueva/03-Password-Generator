@@ -54,6 +54,30 @@ function determineUppercase(){
     return uppercaseChoice;
 }
 
+//Function for determining whether or not to include numbers in password
+function determineNumber(){
+    numChoice = prompt("Would you like your password to include numbers? \n(Yes or No)");
+      numChoice = numChoice.toLowerCase();
+  
+      if (numChoice === null || numChoice === ""){
+        alert("Please choose Yes or No");
+        determineNumber();
+  
+      }else if (numChoice === "yes" || numChoice ==="y"){
+        numChoice = true;
+        return numChoice;
+  
+      }else if (numChoice === "no" || numChoice ==="n"){
+        numChoice = false;
+        return numChoice;
+      
+      }else {
+        alert("Please choose Yes or No");
+        determineNumber();
+      }
+      return numChoice;
+  }
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
