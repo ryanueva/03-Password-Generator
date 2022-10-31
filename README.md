@@ -1,5 +1,8 @@
 # 03-Password-Generator
 
+## Description
+Create a random password generator based on criteria the user selects. The generator will run on a browser using HTML and CSS while powered by the Javascript code. The password will be required to be between 8 and 128 characters in length. The user will have the choice to select whether or not to include lowercase letters, uppercase letters, numbers, and/or special characters in the password. 
+
 ## User Story
 AS AN employee with access to sensitive data
 I WANT to randomly generate a password that meets certain criteria
@@ -22,3 +25,6 @@ WHEN all prompts are answered
 THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+## Website URL
+https://ryanueva.github.io/03-Password-Generator/
