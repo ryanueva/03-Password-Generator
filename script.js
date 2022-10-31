@@ -30,6 +30,31 @@ function determineLength() {
     return passwordLength;
 }
 
+//Function for determining whether or not to include uppercase letters in pasword
+function determineUppercase(){
+    uppercaseChoice = prompt("Would you like your password to include uppercase letters? \n(Yes or No)");
+    uppercaseChoice = uppercaseChoice.toLowerCase();
+
+    if (uppercaseChoice === null || uppercaseChoice === ""){
+        alert("Please choose Yes or No");
+        return uppercaseChoice;
+    
+    }else if (uppercaseChoice === "yes" || uppercaseChoice === "y"){
+        uppercaseChoice = true;
+        return uppercaseChoice;
+
+    }else if (uppercaseChoice === "no" || uppercaseChoice === "n"){
+        uppercaseChoice = false;
+        return uppercaseChoice;
+
+    }else {
+        alert("Please choose Yes or No");
+        determineUppercase(); 
+    }
+    return uppercaseChoice;
+}
+
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
