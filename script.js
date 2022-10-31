@@ -78,6 +78,30 @@ function determineNumber(){
       return numChoice;
   }
 
+//Function for determining whether or not to include special characters in password
+function determineSpecial(){
+    specialChoice = prompt("Would you like your password to include special characters? \n(Yes or No)");
+      specialChoice = specialChoice.toLowerCase();
+  
+      if (specialChoice === null || specialChoice === ""){
+        alert("Please choose Yes or No");
+        determineSpecial();
+  
+      }else if (specialChoice === "yes" || specialChoice ==="y"){
+        specialChoice = true;
+        return specialChoice;
+  
+      }else if (specialChoice === "no" || specialChoice ==="n"){
+        specialChoice = false;
+        return specialChoice;
+      
+      }else {
+        alert("Please choose Yes or No");
+        determineSpecial();
+      }
+      return specialChoice;
+  }
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
