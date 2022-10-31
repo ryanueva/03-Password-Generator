@@ -11,6 +11,25 @@ var uppercaseChoice;
 var numChoice;
 var specialChoice;
 
+// Function for determining password length
+function determineLength() {
+    passwordLength = prompt("Choose how many characters for your password from 8-128 characters");
+
+    if (passwordLength<8){
+        alert("Please choose a length between 8-128 characters");
+        determineLength();
+    }else if (passwordLength>128) {
+        alert("Please choose a length between 8-128 characters");
+        determineLength();
+    }else if (isNaN(passwordLength)){
+        alert("Please choose a length between 8-128 characters");
+        determineLength();
+    }else{
+        alert("The upcoming screens will ask you to choose the types of characters to be included in your password. \nChoosing 'No' for all three choices will result in a password containing only lower case letters.");
+    }
+    return passwordLength;
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
