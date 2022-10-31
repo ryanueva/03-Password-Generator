@@ -102,7 +102,49 @@ function determineSpecial(){
       return specialChoice;
   }
 
+//Function for generating a random password based on information provided from previous functions
+function generatePassword(){
+    determineLength();
+    console.log(passwordLength);
+    determineUppercase();
+    console.log(uppercaseChoice);
+    determineNumber();
+    console.log(numChoice);
+    determineSpecial();
+    console.log(specialChoice);
 
+    var characters = lowercaseChar;
+    var password;
+    if (uppercaseChoice && numChoice && specialChoice){
+        characters += uppercaseChar + numChar + specialChar;
+
+    }else if (uppercaseChoice && numChoice){
+        characters += uppercaseChar + numChar;
+
+    }else if (numChoice && specialChoice){
+        characters += numChar + specialChar;
+
+    }else if (uppercaseChoice && specialChoice){
+        characters += uppercaseChar + specialChar;
+
+    }else if (uppercaseChoice){
+        characters += uppercaseChar;
+
+    }else if(numChoice){
+        characters += numChar;
+
+    }else if (specialChoice){
+        characters += specialChar;
+
+    }else{
+        characters === lowercaseChar;
+    }
+
+    for(var i = 0; i < passwordLength; i++){
+        password += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return password;
+    }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
